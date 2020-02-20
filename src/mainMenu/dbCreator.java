@@ -8,7 +8,8 @@ public class dbCreator {
     String fileName;
     Connection conn;
 
-    public dbCreator(String fileName) {this.fileName=fileName+".db";
+    public dbCreator(String fileName) {
+    	this.fileName=fileName+".db";
     }
 
 
@@ -34,7 +35,7 @@ public class dbCreator {
 
                     Statement stmt = conn.createStatement();
                     stmt.execute(sql);
-
+                    
                     createdDB=0;
                 }
 
@@ -55,6 +56,13 @@ public class dbCreator {
                 + "	email text NOT NULL,\n"
                 + "	type text NOT NULL\n"
                 + ");";
+        /*String newTable="CREATE TABLE IF NOT EXISTS " +
+                "CREATE TABLE IF NOT EXISTS ppl (\n"
+                + "	id integer PRIMARY KEY autoincrement,\n"
+                + "	fName text NOT NULL,\n"
+                + "	email text NOT NULL,\n"
+                + "	type text NOT NULL\n"
+                + ");";*/
         return sql;
     }
 

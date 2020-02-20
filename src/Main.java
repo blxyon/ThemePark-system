@@ -3,6 +3,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import mainMenu.dbCreator;
 
 public class Main extends Application {
 
@@ -12,6 +13,8 @@ public class Main extends Application {
         primaryStage.setTitle("Main menu");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        dbCreator db = new dbCreator("C:/Users/willd/Desktop/database");
+        db.createNewDatabase();
     }
 
 
