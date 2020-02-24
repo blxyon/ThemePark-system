@@ -1,16 +1,22 @@
-package mainMenu;
+package mainMenu.scheduleTab;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
-import javax.print.DocFlavor;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class SchedulingTabC implements Initializable {
     //controller
-
+    SchedulingTabM modelSc;
     @FXML
     private Label label;
     @FXML
@@ -42,23 +48,6 @@ public class SchedulingTabC implements Initializable {
     @FXML private TableColumn<Schedule, String> st7;
     @FXML private TableColumn<Schedule, String> st8;
 
-    private ObservableList getInitialTableData() {
-
-        List list = new ArrayList();
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        //list.add(new Schedule("Of Human Bondage", "Somerset Maugham"));
-
-
-        ObservableList data = FXCollections.observableList(list);
-
-        return data;
-    }
 
 
     @Override
@@ -74,10 +63,27 @@ public class SchedulingTabC implements Initializable {
         st7.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st7"));
         st8.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st8"));
 
-        ObservableList data = getInitialTableData();
+        modelSc=new SchedulingTabM();
+        ObservableList data = modelSc.getInitialTableData();
         scheduleTable.setItems(data);
     }
+    public void schedule()
+    {
+        FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("mainMenu/view/swapping.fxml"));
+        Stage swapStage=new Stage();
+        swapStage.initModality(Modality.WINDOW_MODAL);
+        swapStage.initOwner(scheduleTable.getScene().getWindow());
 
+        Parent root;
+        try {
+            root = loader.load();
+            swapStage.setTitle("Swapping management");
+            swapStage.setScene(new Scene(root));
+            swapStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void printOut()
     {
         System.out.println("print");
