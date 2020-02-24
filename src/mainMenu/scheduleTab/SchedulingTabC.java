@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class SchedulingTabC implements Initializable {
     //controller
-
+    SchedulingTabM modelSc;
     @FXML
     private Label label;
     @FXML
@@ -48,23 +48,6 @@ public class SchedulingTabC implements Initializable {
     @FXML private TableColumn<Schedule, String> st7;
     @FXML private TableColumn<Schedule, String> st8;
 
-    private ObservableList getInitialTableData() {
-
-        List list = new ArrayList();
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        list.add(new Schedule(1, 1, "sTAFF1", "","BOSS","michae;","john","bva","asf","ass"));
-        //list.add(new Schedule("Of Human Bondage", "Somerset Maugham"));
-
-
-        ObservableList data = FXCollections.observableList(list);
-
-        return data;
-    }
 
 
     @Override
@@ -80,7 +63,8 @@ public class SchedulingTabC implements Initializable {
         st7.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st7"));
         st8.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st8"));
 
-        ObservableList data = getInitialTableData();
+        modelSc=new SchedulingTabM();
+        ObservableList data = modelSc.getInitialTableData();
         scheduleTable.setItems(data);
     }
     public void schedule()
