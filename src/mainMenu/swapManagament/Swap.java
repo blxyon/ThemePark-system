@@ -8,29 +8,29 @@ public class Swap {
     //BE CAREFUL THAT HERE "Swap" means a row in the table of swaps:"9|P1->S1|S2->S3|..." is a "Swap"
     //again you do not need to change this again hopefully
 
-    private SimpleIntegerProperty time;
+    private SimpleStringProperty time;
     private SimpleStringProperty T1;
     private SimpleStringProperty T2;
     private SimpleStringProperty T3;
     private SimpleStringProperty T4;
 
-    public Swap(Integer time, String T1, String T2 ,String T3 ,String T4) {
-        this.time=new SimpleIntegerProperty(time);
+    public Swap(String time, String T1, String T2 ,String T3 ,String T4) {
+        this.time=new SimpleStringProperty(time);
         this.T1 = new SimpleStringProperty(T1);
         this.T2 = new SimpleStringProperty(T2);
         this.T3 = new SimpleStringProperty(T3);
         this.T4 = new SimpleStringProperty(T4);
     }
 
-    public int getTime() {
+    public String getTime() {
         return time.get();
     }
 
-    public SimpleIntegerProperty timeProperty() {
+    public SimpleStringProperty timeProperty() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(String time) {
         this.time.set(time);
     }
 

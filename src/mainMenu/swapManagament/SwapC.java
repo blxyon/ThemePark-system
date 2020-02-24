@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import mainMenu.scheduleTab.SchedulingTabM;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +15,7 @@ public class SwapC implements Initializable {
     //table
     private SwapM modelSw;
     @FXML private TableView<Swap> SwapTable;
-    @FXML private TableColumn<Swap, Integer> time;
+    @FXML private TableColumn<Swap, String> time;
     @FXML private TableColumn<Swap, String> T1;
     @FXML private TableColumn<Swap, String> T2;
     @FXML private TableColumn<Swap, String> T3;
@@ -25,7 +24,7 @@ public class SwapC implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        time.setCellValueFactory(new PropertyValueFactory<Swap, Integer>("time"));
+        time.setCellValueFactory(new PropertyValueFactory<Swap, String>("time"));
         T1.setCellValueFactory(new PropertyValueFactory<Swap, String>("T1"));
         T2.setCellValueFactory(new PropertyValueFactory<Swap, String>("T2"));
         T3.setCellValueFactory(new PropertyValueFactory<Swap, String>("T3"));
