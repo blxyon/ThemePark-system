@@ -13,7 +13,7 @@ public class Main extends Application {
         primaryStage.setTitle("Main menu");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-        dbCreator db = new dbCreator("C:/Users/willd/Desktop/database");
+        dbCreator db = new dbCreator("tempdb");
         db.createNewDatabase();
     }
 

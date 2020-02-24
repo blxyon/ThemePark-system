@@ -31,11 +31,10 @@ public class dbCreator {
 
                     //connect();
 
-                    String sql=getSQLTableCreation();
+                    
 
                     Statement stmt = conn.createStatement();
-                    stmt.execute(sql);
-                    
+                    createTables(stmt);
                     createdDB=0;
                 }
 
@@ -48,22 +47,65 @@ public class dbCreator {
         return createdDB;
     }
 
-    private String getSQLTableCreation() {
-        String sql="CREATE TABLE IF NOT EXISTS " +
-                "CREATE TABLE IF NOT EXISTS ppl (\n"
-                + "	id integer PRIMARY KEY autoincrement,\n"
-                + "	fName text NOT NULL,\n"
-                + "	email text NOT NULL,\n"
-                + "	type text NOT NULL\n"
+    private void createTables(Statement stmt) {
+        String staffTable="CREATE TABLE IF NOT EXISTS staff (\n"
+                + "	staffID integer PRIMARY KEY autoincrement,\n"
+                + "	name text NOT NULL\n"
                 + ");";
-        /*String newTable="CREATE TABLE IF NOT EXISTS " +
-                "CREATE TABLE IF NOT EXISTS ppl (\n"
+       
+       String ridesTable="CREATE TABLE IF NOT EXISTS rides (\n"
+                + "	rideID integer PRIMARY KEY autoincrement,\n"
+                + "	name text NOT NULL,\n"
+                + "	type integer NOT NULL\n"
+                + ");";
+        
+        String ridePositionsTable="CREATE TABLE IF NOT EXISTS ridePositions (\n"
                 + "	id integer PRIMARY KEY autoincrement,\n"
-                + "	fName text NOT NULL,\n"
-                + "	email text NOT NULL,\n"
-                + "	type text NOT NULL\n"
-                + ");";*/
-        return sql;
+                + "	rideID integer NOT NULL,\n"
+                + "	positionName text NOT NULL,\n"
+                + "	operator integer NOT NULL,\n"
+                + "	attendant integer NOT NULL,\n"
+                + "	required integer NOT NULL, \n"
+                + "	FOREIGN KEY (rideID) REFERENCES rides(rideID) \n"
+                + ");";
+        
+        String skillTable="CREATE TABLE IF NOT EXISTS skills (\n"
+                + "	id integer PRIMARY KEY autoincrement,\n"
+                + "	staffID integer NOT NULL,\n"
+                + "	positionID integer NOT NULL,\n"
+                + "	FOREIGN KEY (staffID) REFERENCES staff(staffID),\n"
+                + "	FOREIGN KEY (positionID) REFERENCES ridePositions(id)\n"
+                + ");";
+        
+        String scheduleTable="CREATE TABLE IF NOT EXISTS schedule (\n"
+                + "	id integer PRIMARY KEY autoincrement,\n"
+                + "	positionID integer NOT NULL,\n"
+                + "	date text NOT NULL,\n"
+                + "	startTime text NOT NULL,\n"
+                + "	endTime text NOT NULL,\n"
+                + "	staffID integer NOT NULL,\n"
+                + "	FOREIGN KEY (staffID) REFERENCES staff(staffID)\n"
+                + "	FOREIGN KEY (positionID) REFERENCES ridePositions(id)\n"
+                + ");";
+        
+        try {
+			stmt.execute(staffTable);
+			System.out.println("1");
+			stmt.execute(ridesTable);
+			System.out.println("2");
+			stmt.execute(ridePositionsTable);
+			System.out.println("3");
+			stmt.execute(skillTable);
+			System.out.println("4");
+			stmt.execute(scheduleTable);
+			System.out.println("5");
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+      
     }
 
     public void connect() {
