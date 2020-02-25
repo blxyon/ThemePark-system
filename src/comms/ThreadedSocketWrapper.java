@@ -74,8 +74,10 @@ public class ThreadedSocketWrapper implements Runnable{
 	}
 	
 	public void stop() {
-		running = false;
-		cleanup();
+		if (running) {
+			running = false;
+			cleanup();
+		}
 	}
 	
 	private void cleanup() {
