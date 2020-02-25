@@ -31,10 +31,45 @@ public class ThreadedSocketWrapper implements Runnable{
 		}
 	}
 	
+	private void acceptMessage() {
+		try {
+			String message = in.readLine();
+			if (message == null) {
+				stop();
+				return;
+			}
+			messages.add(message);
+		} catch (IOException e){
+			System.out.println("Error while accepting a message");
+			System.out.println(e);
+		}
+	}
+	
+	public String readMessage() {
+		if (messages.isEmpty()) {
+			return null;
+		}
+		return messages.remove();
+	}
+	
+	public void writeMessage(String message) {
+		try {
+			out.write(message);
+			out.newLine();
+		} catch (IOException e) {
+			System.out.println("Error while writing a message");
+			System.out.println(e);
+		}
+	}
+	
+	public boolean hasMessages() {
+		return !messages.isEmpty();
+	}
+	
 	public void run() {
 		running = true;
 		while (running) {
-			//do stuff
+			acceptMessage();
 		}
 	}
 	
