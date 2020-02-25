@@ -1,5 +1,6 @@
 package comms;
 
+import java.io.IOException;
 import java.net.Socket;
 
 public class ThreadedSocket {
@@ -19,7 +20,7 @@ public class ThreadedSocket {
 		socket.stop();
 	}
 	
-	public void writeMessage(String message) {
+	public void writeMessage(String message) throws IOException {
 		socket.writeMessage(message);
 	}
 	

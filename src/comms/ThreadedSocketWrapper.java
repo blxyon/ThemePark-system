@@ -52,14 +52,9 @@ public class ThreadedSocketWrapper implements Runnable{
 		return messages.remove();
 	}
 	
-	public void writeMessage(String message) {
-		try {
-			out.write(message);
-			out.newLine();
-		} catch (IOException e) {
-			System.out.println("Error while writing a message");
-			System.out.println(e);
-		}
+	public void writeMessage(String message) throws IOException {
+		out.write(message);
+		out.newLine();
 	}
 	
 	public boolean hasMessages() {
