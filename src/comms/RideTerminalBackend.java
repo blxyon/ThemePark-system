@@ -19,7 +19,13 @@ public class RideTerminalBackend implements Runnable{
 		running = true;
 		connect("127.0.0.1", 5555);
 		while (running) {
-			//do stuff
+			String newMessage = managerTerminal.readMessage();
+			if (newMessage == null) {
+				stop();
+				return;
+			}
+			
+			processMessage(newMessage);
 		}
 	}
 	
@@ -48,7 +54,10 @@ public class RideTerminalBackend implements Runnable{
 		//do stuff
 	}
 	
-	private void processMessages() {
-		//do stuff
+	private void processMessage(String message) {
+		String[] elements = message.split(",");
+		if (elements[0] == "type") {
+			//do stuff
+		}
 	}
 }
