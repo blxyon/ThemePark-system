@@ -31,6 +31,7 @@ public class RideTerminalBackend implements Runnable{
 	
 	public void login(String user) {
 		if (currentWorkers.contains(user)) {
+			//replace with a pop up window?
 			System.out.println("Error, user " + user + " is already logged in");
 			return;
 		}
@@ -42,6 +43,7 @@ public class RideTerminalBackend implements Runnable{
 	
 	public void logout(String user) {
 		if (!currentWorkers.contains(user)) {
+			//replace with a pop up window?
 			System.out.println("Error, user " + user + " is not logged in");
 			return;
 		}
@@ -73,7 +75,9 @@ public class RideTerminalBackend implements Runnable{
 	}
 	
 	private void connectionHandshake() {
-		//do stuff
+		try {
+			managerTerminal.writeMessage("terminal," + name);
+		} catch (IOException e) {}
 	}
 	
 	private void processMessage(String message) {
