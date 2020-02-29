@@ -29,6 +29,28 @@ public class RideTerminalBackend implements Runnable{
 		}
 	}
 	
+	public void login(String user) {
+		if (currentWorkers.contains(user)) {
+			System.out.println("Error, user " + user + " is already logged in");
+			return;
+		}
+		currentWorkers.add(user);
+		try {
+			managerTerminal.writeMessage("login," + user);
+		} catch (IOException e) {}
+	}
+	
+	public void logout(String user) {
+		if (!currentWorkers.contains(user)) {
+			System.out.println("Error, user " + user + " is not logged in");
+			return;
+		}
+		currentWorkers.remove(user);
+		try {
+			managerTerminal.writeMessage("logout," + user);
+		} catch (IOException e) {}
+	}
+	
 	private void connect(String terminalAddress, int terminalPort) {
 		try {
 			Socket serverSocket = new Socket(terminalAddress, terminalPort);
