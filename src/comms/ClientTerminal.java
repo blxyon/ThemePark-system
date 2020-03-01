@@ -1,6 +1,9 @@
 package comms;
 
+import java.io.IOException;
 import java.util.LinkedList;
+
+import mainMenu.swapManagament.Swap;
 
 public class ClientTerminal {
 	private String name;
@@ -8,9 +11,12 @@ public class ClientTerminal {
 	private LinkedList<String> currentUsers = null;
 	private boolean running;
 	
+	private SwapParser swapParser;
+	
 	public ClientTerminal(ThreadedSocket socket) {
 		this.socket = socket;
 		currentUsers = new LinkedList<String>();
+		swapParser = new SwapParser();
 		
 		if (!connectionHandshake()) {
 			System.out.println("Failed connection handshake");
@@ -34,6 +40,8 @@ public class ClientTerminal {
 	}
 	
 	public LinkedList<String> processMessages() {
+		if (!running)
+			return null;
 		LinkedList<String> remainingMessages = new LinkedList<String>();
 		String message = socket.readMessage();
 		while (message != null) {
@@ -47,5 +55,25 @@ public class ClientTerminal {
 			}
 		}
 		return remainingMessages;
+	}
+	
+	public void sendSwap(Swap swap) {
+		String swapString = swapParser.turnToString(swap);
+		try {
+			socket.writeMessage(swapString);
+		} catch (IOException e) {
+			System.out.println("Connection lost with terminal \"" + name + "\"");
+			stop();
+			return;
+		}
+	}
+	
+	private void stop() {
+		running = false;
+		socket.stop();
+	}
+	
+	public boolean isRunning() {
+		return running;
 	}
 }
