@@ -53,6 +53,7 @@ public class ClientTerminal {
 			} else {
 				remainingMessages.add(message);
 			}
+			message = socket.readMessage();
 		}
 		return remainingMessages;
 	}
@@ -75,5 +76,9 @@ public class ClientTerminal {
 	
 	public boolean isRunning() {
 		return running;
+	}
+	
+	public String getName() {
+		return name;
 	}
 }
