@@ -33,4 +33,19 @@ public class ClientTerminal {
 		return true;
 	}
 	
+	public LinkedList<String> processMessages() {
+		LinkedList<String> remainingMessages = new LinkedList<String>();
+		String message = socket.readMessage();
+		while (message != null) {
+			String[] elements = message.split(",");
+			if (elements[0] == "login" ) {
+				currentUsers.add(elements[1]);
+			} else if (elements[0] == "logout") {
+				currentUsers.remove(elements[1]);
+			} else {
+				remainingMessages.add(message);
+			}
+		}
+		return remainingMessages;
+	}
 }
