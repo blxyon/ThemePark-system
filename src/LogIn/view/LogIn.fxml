@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" blendMode="SRC_OVER" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="760.0" style="-fx-background-color: #EC4521;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="LogIn.logInC">
+  <children>
+    <GridPane prefHeight="366.0" prefWidth="578.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="215.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="219.0">
+      <children>
+        <Label style="-fx-background-color: #0000;" text="Welcome" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+          <font>
+            <Font size="35.0" />
+          </font>
+        </Label>
+        <TextField fx:id="userF" prefHeight="56.0" prefWidth="578.0" promptText="Username" text="" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <PasswordField fx:id="passF" prefHeight="56.0" prefWidth="578.0" promptText="Password" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Button fx:id="loginB" mnemonicParsing="false" onAction="#logIn" prefHeight="49.0" prefWidth="144.0" text="Log In" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>
