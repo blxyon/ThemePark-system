@@ -21,14 +21,14 @@ public class TerminalServer {
 		}
 	}
 	
-	public ThreadedSocket getClient() {
+	public ClientTerminal getClient() {
 		Socket newSocket = serverSocket.getClient();
 		if (newSocket == null) {
 			return null;
 		}
 		ThreadedSocket newClient = new ThreadedSocket(newSocket);
 		newClient.start();
-		return newClient;
+		return new ClientTerminal(newClient);
 	}
 	
 	public void start() {
