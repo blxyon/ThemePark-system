@@ -9,12 +9,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("mainMenu/view/menu.fxml"));
-        primaryStage.setTitle("Main menu");
+        Parent root = FXMLLoader.load(getClass().getResource("LogIn/view/LogIn.fxml"));
+        primaryStage.setTitle("Log In");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-        dbCreator db = new dbCreator("tempdb");
-        db.createNewDatabase();
+
+        //dbCreator db = new dbCreator("tempdb");
+        //db.createNewDatabase();
     }
 
 
