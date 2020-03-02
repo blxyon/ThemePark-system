@@ -69,6 +69,16 @@ public class ClientTerminal {
 		}
 	}
 	
+	public void sendAlert(String alert) {
+		try {
+			socket.writeMessage("alert," + alert);
+		} catch (IOException e) {
+			System.out.println("Connection lost with terminal \"" + name + "\"");
+			stop();
+			return;
+		}
+	}
+	
 	private void stop() {
 		running = false;
 		socket.stop();

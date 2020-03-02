@@ -91,11 +91,17 @@ public class RideTerminalBackend implements Runnable{
 		String[] elements = message.split(",");
 		if (elements[0] == "swap") {
 			addSwap(message);
+		} else if (elements[1] == "alert") {
+			alert(elements[1]);
 		}
 	}
 	
 	private void addSwap(String swapString) {
 		Swap newSwap = swapParser.fromString(swapString);
 		swaps.add(newSwap);
+	}
+	
+	private void alert(String message) {
+		System.out.println("Alert from the manager: " + message);
 	}
 }
