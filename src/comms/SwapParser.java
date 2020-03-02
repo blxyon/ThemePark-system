@@ -10,13 +10,13 @@ public class SwapParser {
 		if (elements[0] != "swap") {
 			return null;
 		}
-		Swap result = new Swap(Integer.parseInt(elements[1]), elements[2], elements[3], elements[4], elements[5]);
+		Swap result = new Swap(elements[1], elements[2], elements[3], elements[4], elements[5]);
 		return result;
 	}
 	
 	public String turnToString(Swap swap) {
 		String result = "swap";
-		result += "," + Integer.toString(swap.getTime());
+		result += "," + swap.getTime();
 		result += "," + swap.getT1();
 		result += "," + swap.getT2();
 		result += "," + swap.getT3();
