@@ -41,7 +41,16 @@ public class ManagerTerminalBackend implements Runnable{
 	
 	private void processClient(ClientTerminal terminal) {
 		LinkedList<String> remainingMessages = terminal.processMessages();
-		//process remaining messages, none currently
+		for (String message : remainingMessages) {
+			processMessage(message, terminal);
+		}
+	}
+	
+	private void processMessage(String message, ClientTerminal terminal) {
+		String[] elements = message.split("");
+		if (elements[0] == "alert") {
+			System.out.println("Alert from terminal \"" + terminal.getName() + "\": " + elements[1]);
+		}
 	}
 	
 	public boolean sendSwap(String terminalName, Swap swap) {
