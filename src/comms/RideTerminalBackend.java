@@ -60,6 +60,12 @@ public class RideTerminalBackend implements Runnable{
 		} catch (IOException e) {}
 	}
 	
+	public void sendAlert(String message) {
+		try {
+			managerTerminal.writeMessage("alert," + message);
+		} catch (IOException e) {}
+	}
+	
 	private void connect(String terminalAddress, int terminalPort) {
 		try {
 			Socket serverSocket = new Socket(terminalAddress, terminalPort);
