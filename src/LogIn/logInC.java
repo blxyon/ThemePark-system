@@ -26,7 +26,9 @@ public class logInC {
     {
         Stage stage = (Stage) passF.getScene().getWindow();
         stage.close();
-        FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("mainMenu/view/Menu.fxml"));
+        //FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("mainMenu/view/menu.fxml"));
+        FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("mainMenu/view/menu.fxml"));
+
         Parent root;
         try {
             root = loader.load();
