@@ -1,9 +1,11 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class otherMessC {
     @FXML private Button send;
-
+    @FXML private TextField errorMess;
     private String terminalName;
 
 
@@ -13,7 +15,8 @@ public class otherMessC {
     }
     public void send()
     {
-        System.out.println("hi "+terminalName);
+
+        System.out.println(errorMess.getText());
 
     }
 
