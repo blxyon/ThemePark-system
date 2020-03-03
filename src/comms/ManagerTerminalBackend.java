@@ -2,6 +2,14 @@ package comms;
 
 import java.util.LinkedList;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import mainMenu.swapManagament.Swap;
 
 public class ManagerTerminalBackend implements Runnable{
@@ -49,7 +57,24 @@ public class ManagerTerminalBackend implements Runnable{
 	private void processMessage(String message, ClientTerminal terminal) {
 		String[] elements = message.split("");
 		if (elements[0] == "alert") {
-			System.out.println("Alert from terminal \"" + terminal.getName() + "\": " + elements[1]);
+			
+			Stage dialog = new Stage();
+			VBox dialogVbox = new VBox(20);
+			Button btn=new Button();
+
+			dialogVbox.getChildren().add(new Label("Alert from terminal \"" + terminal.getName() + "\": " + elements[1]));
+			dialogVbox.getChildren().add(btn);
+			btn.setText("OK");
+			btn.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					dialog.close();
+				}
+			});
+			Scene dialogScene = new Scene(dialogVbox, 400, 200);
+			dialog.setScene(dialogScene);
+			dialog.show();
+			//System.out.println("Alert from terminal \"" + terminal.getName() + "\": " + elements[1]);
 		}
 	}
 	
