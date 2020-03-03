@@ -15,11 +15,14 @@ public class RideTerminalBackend implements Runnable{
 	private LinkedList<Swap> swaps;
 	private SwapParser swapParser;
 	
-	public RideTerminalBackend(String name) {
-		this.name = name;
+	public RideTerminalBackend() {
 		currentWorkers = new LinkedList<String>();
 		swaps = new LinkedList<Swap>();
 		swapParser = new SwapParser();
+	}
+	
+	public void setName(String newName) {
+		this.name = newName;
 	}
 	
 	public void run() {
