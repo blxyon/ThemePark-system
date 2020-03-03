@@ -26,13 +26,17 @@ public class ClientTerminal {
 	}
 	
 	private boolean connectionHandshake() {
+		try {
+			Thread.sleep(2000);
+		} catch(InterruptedException e) {}
 		String message = socket.readMessage();
 		if (message == null) {
+			System.out.println("Handshake messame null");
 			return false;
 		}
 		String[] elements = message.split(",");
 		
-		if (elements[0] != "terminal") {
+		if (elements[0].compareTo("terminal") == 0) {
 			return false;
 		}
 		name = elements[1];
@@ -46,9 +50,9 @@ public class ClientTerminal {
 		String message = socket.readMessage();
 		while (message != null) {
 			String[] elements = message.split(",");
-			if (elements[0] == "login" ) {
+			if (elements[0].compareTo("login") == 0) {
 				currentUsers.add(elements[1]);
-			} else if (elements[0] == "logout") {
+			} else if (elements[0].compareTo("logout") == 0) {
 				currentUsers.remove(elements[1]);
 			} else {
 				remainingMessages.add(message);
