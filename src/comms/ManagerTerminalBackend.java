@@ -12,6 +12,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import mainMenu.swapManagament.Swap;
 
+import javax.swing.*;
+
 public class ManagerTerminalBackend implements Runnable{
 	private static ManagerTerminalBackend instance = null;
 	
@@ -67,22 +69,37 @@ public class ManagerTerminalBackend implements Runnable{
 		String[] elements = message.split("");
 		if (elements[0].compareTo("alert") != 0) {
 
-			Stage dialog = new Stage();
-			VBox dialogVbox = new VBox(20);
-			Button btn=new Button();
+//			Stage dialog = new Stage();
+//			VBox dialogVbox = new VBox(20);
+//			Button btn=new Button();
+//
+//			dialogVbox.getChildren().add(new Label("Alert from terminal \"" + terminal.getName() + "\": " + elements[1]));
+//			dialogVbox.getChildren().add(btn);
+//			btn.setText("OK");
+//			btn.setOnAction(new EventHandler<ActionEvent>() {
+//				@Override
+//				public void handle(ActionEvent event) {
+//					dialog.close();
+//				}
+//			});
+//			Scene dialogScene = new Scene(dialogVbox, 400, 200);
+//			dialog.setScene(dialogScene);
+//			dialog.show();
+			final JFrame parent = new JFrame();
+			JButton button = new JButton();
 
-			dialogVbox.getChildren().add(new Label("Alert from terminal \"" + terminal.getName() + "\": " + elements[1]));
-			dialogVbox.getChildren().add(btn);
-			btn.setText("OK");
-			btn.setOnAction(new EventHandler<ActionEvent>() {
+			button.setText("Click me to show dialog!");
+			parent.add(button);
+			parent.pack();
+			parent.setVisible(true);
+
+			button.addActionListener(new java.awt.event.ActionListener() {
 				@Override
-				public void handle(ActionEvent event) {
-					dialog.close();
+				public void actionPerformed(java.awt.event.ActionEvent evt) {
+					String name = JOptionPane.showInputDialog(parent,
+							"What is your name?", null);
 				}
 			});
-			Scene dialogScene = new Scene(dialogVbox, 400, 200);
-			dialog.setScene(dialogScene);
-			dialog.show();
 			//System.out.println("Alert from terminal \"" + terminal.getName() + "\": " + elements[1]);
 		}
 	}
