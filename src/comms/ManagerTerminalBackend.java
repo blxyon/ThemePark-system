@@ -13,6 +13,15 @@ import javafx.stage.Stage;
 import mainMenu.swapManagament.Swap;
 
 public class ManagerTerminalBackend implements Runnable{
+	private static ManagerTerminalBackend instance = null;
+	
+	public static ManagerTerminalBackend getInstance() {
+		if (instance == null) {
+			instance = new ManagerTerminalBackend();
+		}
+		return instance;
+	}
+	
 	private LinkedList<ClientTerminal> terminals;
 	private TerminalServer server;
 	
