@@ -36,7 +36,7 @@ public class ClientTerminal {
 		}
 		String[] elements = message.split(",");
 		
-		if (elements[0].compareTo("terminal") == 0) {
+		if (elements[0].compareTo("terminal") != 0) {
 			return false;
 		}
 		name = elements[1];
@@ -48,6 +48,7 @@ public class ClientTerminal {
 			return null;
 		LinkedList<String> remainingMessages = new LinkedList<String>();
 		String message = socket.readMessage();
+
 		while (message != null) {
 			String[] elements = message.split(",");
 			if (elements[0].compareTo("login") == 0) {

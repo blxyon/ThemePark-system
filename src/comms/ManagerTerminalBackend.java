@@ -66,41 +66,29 @@ public class ManagerTerminalBackend implements Runnable{
 	}
 	
 	private void processMessage(String message, ClientTerminal terminal) {
-		String[] elements = message.split("");
+		String[] elements = message.split(",");
 		if (elements[0].compareTo("alert") == 0) {
-
-//			Stage dialog = new Stage();
-//			VBox dialogVbox = new VBox(20);
-//			Button btn=new Button();
-//
-//			dialogVbox.getChildren().add(new Label("Alert from terminal \"" + terminal.getName() + "\": " + elements[1]));
-//			dialogVbox.getChildren().add(btn);
-//			btn.setText("OK");
-//			btn.setOnAction(new EventHandler<ActionEvent>() {
-//				@Override
-//				public void handle(ActionEvent event) {
-//					dialog.close();
-//				}
-//			});
-//			Scene dialogScene = new Scene(dialogVbox, 400, 200);
-//			dialog.setScene(dialogScene);
-//			dialog.show();
 			final JFrame parent = new JFrame();
+			JPanel p = new JPanel();
 			JButton button = new JButton();
+			JLabel label=new JLabel();
+			label.setText("Alert from terminal \"" + terminal.getName() + "\": " + elements[1]);
 
-			button.setText("Click me to show dialog!");
-			parent.add(button);
-			parent.pack();
+			button.setText("OK");
+			p.add(label);
+			p.add(button);
+
+			parent.add(p);
+			parent.setSize(300, 100);
 			parent.setVisible(true);
 
 			button.addActionListener(new java.awt.event.ActionListener() {
 				@Override
 				public void actionPerformed(java.awt.event.ActionEvent evt) {
-					String name = JOptionPane.showInputDialog(parent,
-							"What is your name?", null);
+					parent.dispose();
 				}
 			});
-			//System.out.println("Alert from terminal \"" + terminal.getName() + "\": " + elements[1]);
+
 		}
 	}
 	
