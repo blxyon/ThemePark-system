@@ -37,7 +37,7 @@ public class RideTerminalBackend implements Runnable{
 	
 	public void run() {
 		running = true;
-		connect("127.0.0.1", 5555);
+		connect("138.38.158.13", 5555);
 		while (running) {
 			String newMessage = managerTerminal.readMessage();
 			if (newMessage == null) {
