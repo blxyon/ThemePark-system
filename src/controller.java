@@ -1,25 +1,26 @@
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import comms.RideTerminalBackend;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-
-import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class controller implements Initializable {
     @FXML Button otherMessB;
     @FXML Text terminalNameL;
 //get all the buttons/tables from all windows here
+    
+    RideTerminalBackend backendInstance;
+    
     public String getTerminalName()
             {
                 try
@@ -33,11 +34,25 @@ public class controller implements Initializable {
         }
 
     }
-    public void callBreak(){}
-    public void callFire(){}
-    public void callInjury(){}
-    public void callSec(){}
-    public void callMissing(){}
+    public void callBreak(){
+    	backendInstance.sendAlert("break");
+    }
+    
+    public void callFire(){
+    	backendInstance.sendAlert("fire");
+    }
+    
+    public void callInjury(){
+    	backendInstance.sendAlert("injury");
+    }
+    
+    public void callSec(){
+    	backendInstance.sendAlert("security");
+    }
+    
+    public void callMissing(){
+    	backendInstance.sendAlert("missing");
+    }
 
     public void otherPop()
     {
@@ -65,6 +80,7 @@ public class controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+    	backendInstance = RideTerminalBackend.getInstance();
+    	System.out.println("initializing");
     }
 }
