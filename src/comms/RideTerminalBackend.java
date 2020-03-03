@@ -7,6 +7,16 @@ import java.util.LinkedList;
 import mainMenu.swapManagament.Swap;
 
 public class RideTerminalBackend implements Runnable{
+	private static RideTerminalBackend instance = null;
+	
+	public static RideTerminalBackend getInstance() {
+		if (instance == null) {
+			instance = new RideTerminalBackend();
+		}
+		return instance;
+	}
+	
+	
 	private String name;
 	private ThreadedSocket managerTerminal = null;
 	private boolean running = false;
@@ -15,11 +25,14 @@ public class RideTerminalBackend implements Runnable{
 	private LinkedList<Swap> swaps;
 	private SwapParser swapParser;
 	
-	public RideTerminalBackend(String name) {
-		this.name = name;
+	public RideTerminalBackend() {
 		currentWorkers = new LinkedList<String>();
 		swaps = new LinkedList<Swap>();
 		swapParser = new SwapParser();
+	}
+	
+	public void setName(String newName) {
+		this.name = newName;
 	}
 	
 	public void run() {
