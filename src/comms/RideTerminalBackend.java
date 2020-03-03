@@ -7,6 +7,16 @@ import java.util.LinkedList;
 import mainMenu.swapManagament.Swap;
 
 public class RideTerminalBackend implements Runnable{
+	private static RideTerminalBackend instance = null;
+	
+	public static RideTerminalBackend getInstance() {
+		if (instance == null) {
+			instance = new RideTerminalBackend();
+		}
+		return instance;
+	}
+	
+	
 	private String name;
 	private ThreadedSocket managerTerminal = null;
 	private boolean running = false;
