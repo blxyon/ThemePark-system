@@ -67,7 +67,7 @@ public class ManagerTerminalBackend implements Runnable{
 	
 	private void processMessage(String message, ClientTerminal terminal) {
 		String[] elements = message.split("");
-		if (elements[0].compareTo("alert") != 0) {
+		if (elements[0].compareTo("alert") == 0) {
 
 //			Stage dialog = new Stage();
 //			VBox dialogVbox = new VBox(20);
