@@ -36,7 +36,7 @@ public class ClientTerminal {
 		}
 		String[] elements = message.split(",");
 		
-		if (elements[0].compareTo("terminal") == 0) {
+		if (elements[0].compareTo("terminal") != 0) {
 			return false;
 		}
 		name = elements[1];
