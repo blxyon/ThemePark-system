@@ -103,7 +103,9 @@ public class RideTerminalBackend implements Runnable{
 	private void connectionHandshake() {
 		try {
 			managerTerminal.writeMessage("terminal," + name);
-		} catch (IOException e) {}
+		} catch (IOException e) {
+			System.out.println(e);
+		}
 	}
 	
 	private void processMessage(String message) {

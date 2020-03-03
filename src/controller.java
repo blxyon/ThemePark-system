@@ -33,6 +33,12 @@ public class controller implements Initializable {
         }
 
     }
+    public void callBreak(){}
+    public void callFire(){}
+    public void callInjury(){}
+    public void callSec(){}
+    public void callMissing(){}
+
     public void otherPop()
     {
         FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("main/views/otherMess.fxml"));

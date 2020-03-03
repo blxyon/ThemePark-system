@@ -19,7 +19,7 @@
                <children>
                   <GridPane prefHeight="325.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <TextField alignment="CENTER" prefHeight="200.0" promptText="Enter Error Message" GridPane.rowIndex="2">
+                        <TextField fx:id="errorMess" alignment="CENTER" prefHeight="200.0" promptText="Enter Error Message" GridPane.rowIndex="2">
                            <font>
                               <Font name="Raleway Medium" size="22.0" />
                            </font>
