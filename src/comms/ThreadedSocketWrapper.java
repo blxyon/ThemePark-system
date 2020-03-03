@@ -55,6 +55,7 @@ public class ThreadedSocketWrapper implements Runnable{
 	public void writeMessage(String message) throws IOException {
 		out.write(message);
 		out.newLine();
+		out.flush();
 	}
 	
 	public boolean hasMessages() {
