@@ -17,6 +17,7 @@ public class Main extends Application {
         //init backend
         RideTerminalBackend backendInstance = RideTerminalBackend.getInstance();
 
+        
         //FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/ninjago.fxml"));
         //FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/destiny.fxml"));
         //FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/skyrider.fxml"));
@@ -24,6 +25,7 @@ public class Main extends Application {
 
         Parent root=loader.load();
 
+        
         primaryStage.setTitle("Terminal control");
         primaryStage.setScene(new Scene(root));
         controller c=(controller)(loader.getController());

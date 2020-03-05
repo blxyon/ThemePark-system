@@ -42,7 +42,7 @@ public class RideTerminalBackend implements Runnable{
 	
 	public void run() {
 		running = true;
-		connect("localhost", 5555);
+		connect("localhost", 30001);
 		while (running) {
 			String newMessage = managerTerminal.readMessage();
 			if (newMessage == null) {
@@ -104,10 +104,6 @@ public class RideTerminalBackend implements Runnable{
 	}
 	
 	public void sendAlert(String message) {
-		if (!running) {
-			System.out.println("Backend not active");
-			return;
-		}
 		try {
 			managerTerminal.writeMessage("alert," + message);
 		} catch (IOException e) {
