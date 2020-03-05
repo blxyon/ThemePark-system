@@ -74,9 +74,15 @@ public class RideTerminalBackend implements Runnable{
 	}
 	
 	public void sendAlert(String message) {
+		if (!running) {
+			System.out.println("Backend not active");
+			return;
+		}
 		try {
 			managerTerminal.writeMessage("alert," + message);
-		} catch (IOException e) {}
+		} catch (IOException e) {
+			System.out.println("error sending alert");
+		}
 	}
 	
 	private void connect(String terminalAddress, int terminalPort) {
@@ -88,6 +94,7 @@ public class RideTerminalBackend implements Runnable{
 			System.out.println("Could not connect to the manager terminal, stopping application");
 			System.out.println(e);
 			stop();
+			return;
 		}
 		managerTerminal.start();
 		connectionHandshake();
@@ -96,7 +103,9 @@ public class RideTerminalBackend implements Runnable{
 	public void stop() {
 		if (running) {
 			running = false;
-			managerTerminal.stop();
+			if (managerTerminal != null) {
+				managerTerminal.stop();
+			}
 		}
 	}
 	
