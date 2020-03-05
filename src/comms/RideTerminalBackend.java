@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.LinkedList;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import mainMenu.Swap;
 
 public class RideTerminalBackend implements Runnable{
@@ -52,6 +57,7 @@ public class RideTerminalBackend implements Runnable{
 	public void login(String user) {
 		if (currentWorkers.contains(user)) {
 			//replace with a pop up window?
+			popup("Error, user " + user + " is already logged in");
 			System.out.println("Error, user " + user + " is already logged in");
 			return;
 		}
@@ -64,6 +70,7 @@ public class RideTerminalBackend implements Runnable{
 	public void logout(String user) {
 		if (!currentWorkers.contains(user)) {
 			//replace with a pop up window?
+			popup("Error, user " + user + " is not logged in");
 			System.out.println("Error, user " + user + " is not logged in");
 			return;
 		}
@@ -71,6 +78,29 @@ public class RideTerminalBackend implements Runnable{
 		try {
 			managerTerminal.writeMessage("logout," + user);
 		} catch (IOException e) {}
+	}
+	
+	private void popup(String message) {
+		final JFrame parent = new JFrame();
+		JPanel p = new JPanel();
+		JButton button = new JButton();
+		JLabel label=new JLabel();
+		label.setText("message");
+
+		button.setText("OK");
+		p.add(label);
+		p.add(button);
+
+		parent.add(p);
+		parent.setSize(300, 100);
+		parent.setVisible(true);
+
+		button.addActionListener(new java.awt.event.ActionListener() {
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				parent.dispose();
+			}
+		});
 	}
 	
 	public void sendAlert(String message) {
