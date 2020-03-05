@@ -1,6 +1,6 @@
 package comms;
 
-import mainMenu.swapManagament.Swap;
+import mainMenu.Swap;
 
 public class SwapParser {
 	public SwapParser() {};

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.LinkedList;
 
-import mainMenu.swapManagament.Swap;
+import mainMenu.Swap;
 
 public class RideTerminalBackend implements Runnable{
 	private static RideTerminalBackend instance = null;
