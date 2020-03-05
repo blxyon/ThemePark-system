@@ -2,6 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -28,7 +30,7 @@
                   <children>
                     <GridPane GridPane.columnIndex="1">
                       <children>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #d0eeff#d0eeff;" text="Sign In" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <Button fx:id="signInB" mnemonicParsing="false" onAction="#signIn" style="-fx-background-color: #d0eeff#d0eeff;" text="Sign In" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                                        <graphic>
                                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -39,9 +41,9 @@
                                        <GridPane.margin>
                                           <Insets right="10.0" />
                                        </GridPane.margin></Button>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #d0eeff#d0eeff;" text="Sign Out" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                        <Button fx:id="signOutB" mnemonicParsing="false" onAction="#signOut" style="-fx-background-color: #d0eeff#d0eeff;" text="Sign Out" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <graphic>
-                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="sign" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@iu-3.png" />
                                              </image>
@@ -50,11 +52,6 @@
                                        <GridPane.margin>
                                           <Insets right="5.0" />
                                        </GridPane.margin></Button>
-                        <TableView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffe9ec#ffe9ec;" GridPane.rowIndex="2">
-                          <columns>
-                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="80.0" prefWidth="410.0" style="-fx-base: #ff9daa;" text="Currently Signed In" />
-                          </columns>
-                        </TableView>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HH:MM" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
                     <font>
                       <Font name="Raleway Medium" size="40.0" fx:id="x2" />
@@ -63,13 +60,16 @@
                                           <Insets bottom="-20.0" left="20.0" />
                                        </GridPane.margin>
                   </Text>
+                                    <ListView fx:id="staffLoggedList" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3" />
+                                    <Label text="Staff currently logged In:" GridPane.rowIndex="2" />
                       </children>
                       <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       </columnConstraints>
                       <rowConstraints>
                         <RowConstraints maxHeight="182.0" minHeight="0.0" prefHeight="61.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="457.0" minHeight="3.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="457.0" minHeight="3.0" prefHeight="68.20000457763672" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="457.0" minHeight="10.0" prefHeight="24.99999542236327" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="523.0" minHeight="10.0" prefHeight="433.0" vgrow="SOMETIMES" />
                       </rowConstraints>
                     </GridPane>
@@ -84,12 +84,12 @@
                                     <Font size="26.0" fx:id="x1" />
                                   </font>
                                 </Text>
-                                <TableView fx:id="VOpTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                <TableView fx:id="OperatorTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                   <columns>
-                                    <TableColumn fx:id="Ocat" prefWidth="140.0" resizable="true" text="Category" />
-                                    <TableColumn fx:id="Oname" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
-                                    <TableColumn fx:id="Ostart" maxWidth="150.0" prefWidth="150.0" text="Start" />
-                                    <TableColumn fx:id="Oend" maxWidth="150.0" prefWidth="150.0" text="End" />
+                                    <TableColumn fx:id="OCategory" prefWidth="140.0" resizable="true" text="Category" />
+                                    <TableColumn fx:id="OName" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                    <TableColumn fx:id="OStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
+                                    <TableColumn fx:id="OEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                   </columns>
                                 </TableView>
                                 <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendant - Primary" GridPane.rowIndex="3" />
@@ -114,28 +114,28 @@
                                     <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="NEVER" />
                                   </rowConstraints>
                                 </GridPane>
-                                <TableView prefHeight="175.0" prefWidth="750.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                <TableView fx:id="AttendantPTable" prefHeight="175.0" prefWidth="750.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
                                   <columns>
-                                    <TableColumn prefWidth="140.0" resizable="true" text="Category" />
-                                    <TableColumn maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
-                                    <TableColumn maxWidth="150.0" prefWidth="150.0" text="Start" />
-                                    <TableColumn maxWidth="150.0" prefWidth="150.0" text="End" />
+                                    <TableColumn fx:id="APCategory" prefWidth="140.0" resizable="true" text="Category" />
+                                    <TableColumn fx:id="APName" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                    <TableColumn fx:id="APStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
+                                    <TableColumn fx:id="APEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                   </columns>
                                 </TableView>
-                                <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                                <TableView fx:id="AttendantSTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="6">
                                   <columns>
-                                    <TableColumn prefWidth="140.0" resizable="true" text="Category" />
-                                    <TableColumn maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
-                                    <TableColumn maxWidth="150.0" prefWidth="150.0" text="Start" />
-                                    <TableColumn maxWidth="150.0" prefWidth="150.0" text="End" />
+                                    <TableColumn fx:id="ASCategory" prefWidth="140.0" resizable="true" text="Category" />
+                                    <TableColumn fx:id="ASName" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                    <TableColumn fx:id="ASStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
+                                    <TableColumn fx:id="ASEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                   </columns>
                                 </TableView>
-                                <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                                <TableView fx:id="ServiceTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="8">
                                   <columns>
-                                    <TableColumn prefWidth="140.0" resizable="true" text="Category" />
-                                    <TableColumn maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
-                                    <TableColumn maxWidth="150.0" prefWidth="150.0" text="Start" />
-                                    <TableColumn maxWidth="150.0" prefWidth="150.0" text="End" />
+                                    <TableColumn fx:id="SCategory" prefWidth="140.0" resizable="true" text="Category" />
+                                    <TableColumn fx:id="SName" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                    <TableColumn fx:id="SStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
+                                    <TableColumn fx:id="SEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                   </columns>
                                 </TableView>
                               </children>

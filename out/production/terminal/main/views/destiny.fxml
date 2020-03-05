@@ -171,15 +171,15 @@
                                              </font>
                                           </Button>
                                           <Button fx:id="otherMessB" layoutX="10.0" layoutY="423.0" mnemonicParsing="false" onAction="#otherPop" prefHeight="100.0" prefWidth="500.0" text="OTHER" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="Ride Breakdown" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                          <Button fx:id="dRide" mnemonicParsing="false" onAction="#callBreak" prefHeight="100.0" prefWidth="500.0" text="Ride Breakdown" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                                              <GridPane.margin>
                                                 <Insets />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="Fire" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="Missing Staff" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="Serious Injury" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                                          <Button layoutX="135.0" layoutY="344.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="Security Required" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                          <Button fx:id="dFire" mnemonicParsing="false" onAction="#callFire" prefHeight="100.0" prefWidth="500.0" text="Fire" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                          <Button fx:id="dMissing" mnemonicParsing="false" onAction="#callMissing" prefHeight="100.0" prefWidth="500.0" text="Missing Staff" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                          <Button fx:id="dSerious" mnemonicParsing="false" onAction="#callInjury" prefHeight="100.0" prefWidth="500.0" text="Serious Injury" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                          <Button fx:id="dSec" layoutX="135.0" layoutY="344.0" mnemonicParsing="false" onAction="#callSec" prefHeight="100.0" prefWidth="500.0" text="Security Required" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Click Message to send to manager" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                              <font>
                                                 <Font size="26.0" fx:id="x1221" />
