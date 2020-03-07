@@ -30,7 +30,7 @@ public class ManagerTerminalBackend implements Runnable{
 	public boolean running;
 	
 	public ManagerTerminalBackend() {
-		server = new TerminalServer(5555);
+		server = new TerminalServer(30001);
 		terminals = new LinkedList<ClientTerminal>();
 	}
 	
