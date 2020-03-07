@@ -66,7 +66,7 @@ public class controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //initialization
-        //backendInstance = RideTerminalBackend.getInstance();
+        backendInstance = RideTerminalBackend.getInstance();
         System.out.println("initializing");
 
         OCategory.setCellValueFactory(new PropertyValueFactory<Staff, String>("Category"));

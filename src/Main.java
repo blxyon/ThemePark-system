@@ -15,8 +15,9 @@ public class Main extends Application {
         //TO OPEN ONE TERMINAL JUST UNCOMMENT ONE OF THE 4 BELLOW LINES RESPECTIVELY
 
         //init backend
-        //RideTerminalBackend backendInstance = RideTerminalBackend.getInstance();
+        RideTerminalBackend backendInstance = RideTerminalBackend.getInstance();
 
+        
         //FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/ninjago.fxml"));
         //FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/destiny.fxml"));
         //FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/skyrider.fxml"));
@@ -24,13 +25,14 @@ public class Main extends Application {
 
         Parent root=loader.load();
 
+        
         primaryStage.setTitle("Terminal control");
         primaryStage.setScene(new Scene(root));
         controller c=(controller)(loader.getController());
         String tName=c.getTerminalName();
-        //backendInstance.setName(tName);
-        //Thread backendThread = new Thread(backendInstance);
-        //backendThread.start();
+        backendInstance.setName(tName);
+        Thread backendThread = new Thread(backendInstance);
+        backendThread.start();
         primaryStage.show();
     }
 
