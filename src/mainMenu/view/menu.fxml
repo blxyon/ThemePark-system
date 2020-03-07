@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -29,133 +28,7 @@
         </Tab>
             <Tab text="Notification Sender">
                <content>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <ScrollPane prefHeight="566.0" prefWidth="1165.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <content>
-                              <AnchorPane prefHeight="572.0" prefWidth="1166.0" style="-fx-background-color: #eeffd0#eeffd0;">
-                                 <children>
-                                    <GridPane prefHeight="910.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <Button layoutX="135.0" layoutY="366.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #5a5a5a#5a5a5a;" text="CANCEL" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="8">
-                                             <font>
-                                                <Font name="Raleway ExtraBold" size="27.0" />
-                                             </font>
-                                          </Button>
-                                          <Button layoutX="10.0" layoutY="423.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="OTHER" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="Ride Breakdown" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                                             <GridPane.margin>
-                                                <Insets />
-                                             </GridPane.margin>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="Fire" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="Missing Staff" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="Serious Injury" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                                          <Button layoutX="135.0" layoutY="344.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" text="Security Required" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Click Message to send to manager" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                             <font>
-                                                <Font size="26.0" fx:id="x1221" />
-                                             </font>
-                                          </Text>
-                                          <GridPane>
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Send Emergency" underline="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="Raleway SemiBold" size="40.0" fx:id="x3221" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="NEVER" />
-                                             </rowConstraints>
-                                          </GridPane>
-                                       </children>
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" prefHeight="90.0" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="85.52965545654297" minHeight="10.0" prefHeight="81.68915557861328" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="121.31901550292969" minHeight="10.0" prefHeight="93.12066650390625" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="138.87933349609375" minHeight="10.0" prefHeight="108.37933349609375" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="187.41717529296875" minHeight="5.1553955078125" prefHeight="102.40081787109375" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="258.6932373046875" minHeight="10.0" prefHeight="107.11248779296875" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="258.6932373046875" minHeight="10.0" prefHeight="107.11248779296875" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="258.6932373046875" minHeight="10.0" prefHeight="107.11248779296875" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="258.6932373046875" minHeight="10.0" prefHeight="107.11248779296875" vgrow="NEVER" />
-                                       </rowConstraints>
-                                    </GridPane>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </ScrollPane>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
-            <Tab text="OTHER MESSAGE">
-               <content>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <ScrollPane prefHeight="566.0" prefWidth="1165.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <content>
-                              <AnchorPane prefHeight="572.0" prefWidth="1149.0" style="-fx-background-color: #eeffd0#eeffd0;">
-                                 <children>
-                                    <GridPane prefHeight="325.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <TextField alignment="CENTER" prefHeight="200.0" promptText="Enter Error Message" GridPane.rowIndex="2">
-                                             <font>
-                                                <Font name="Raleway Medium" size="22.0" />
-                                             </font>
-                                             <GridPane.margin>
-                                                <Insets />
-                                             </GridPane.margin>
-                                          </TextField>
-                                          <Button layoutX="135.0" layoutY="366.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #5a5a5a#5a5a5a;" text="SEND" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-                                             <font>
-                                                <Font name="Raleway ExtraBold" size="27.0" />
-                                             </font>
-                                          </Button>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Click Message to send to manager" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                             <font>
-                                                <Font size="26.0" fx:id="x12211" />
-                                             </font>
-                                          </Text>
-                                          <GridPane>
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Send Emergency" underline="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="Raleway SemiBold" size="40.0" fx:id="x32211" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="NEVER" />
-                                             </rowConstraints>
-                                          </GridPane>
-                                       </children>
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" prefHeight="90.0" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="93.72447967529297" minHeight="10.0" prefHeight="69.33792877197266" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="293.0324172973633" minHeight="193.77552032470703" prefHeight="218.16207122802734" vgrow="NEVER" />
-                                          <RowConstraints maxHeight="258.6932373046875" minHeight="0.0" prefHeight="200.0" vgrow="NEVER" />
-                                       </rowConstraints>
-                                    </GridPane>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </ScrollPane>
-                     </children>
-                  </AnchorPane>
+                   <fx:include fx:id="notificationTab" source="notificationTab.fxml" />
                </content>
             </Tab>
       </tabs>

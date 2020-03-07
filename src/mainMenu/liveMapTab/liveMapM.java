@@ -1,18 +1,20 @@
-package mainMenu.TabsTables;
+package mainMenu.liveMapTab;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import mainMenu.swapManagament.Swap;
+import mainMenu.scheduleTab.Schedule;
 
 import java.util.ArrayList;
 import java.util.List;
 
+public class liveMapM {
+    //model
 
-public class tableM {
     public ObservableList getInitialTableData() {
 
         List list = new ArrayList();
-        list.add(new tableTab("cat","Hannan","9:00","10:00"));
+        list.add(new Map("asf","saf","saf","asf"));
+        //list.add(new Schedule("Of Human Bondage", "Somerset Maugham"));
 
         ObservableList data = FXCollections.observableList(list);
 

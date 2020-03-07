@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -53,6 +54,9 @@ public class SchedulingTabC implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        scheduleTable.setEditable(true);
+       // position.setCellFactory(TextFieldTableCell.forTableColumn());
+
         position.setCellValueFactory(new PropertyValueFactory<Schedule, Integer>("position"));
         ride.setCellValueFactory(new PropertyValueFactory<Schedule, Integer>("ride"));
         st1.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st1"));
@@ -88,6 +92,7 @@ public class SchedulingTabC implements Initializable {
     public void printOut()
     {
         System.out.println("print");
+        //functionality to print out the computer
 
     }
 }

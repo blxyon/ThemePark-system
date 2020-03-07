@@ -7,7 +7,7 @@ import javafx.scene.layout.AnchorPane;
 public class MainController {
 
     @FXML private AnchorPane schedulingTab;
-
+    @FXML private AnchorPane liveMapTab;
     //@FXML private LoggerTabController loggerTabController;
 
 //    public TextArea getVisualLog() {
