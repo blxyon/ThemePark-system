@@ -60,8 +60,6 @@ public class controller implements Initializable {
     @FXML private ListView staffLoggedList;
 
 
-    String[] staffLogInEMULATED = { "Hannan", "BOSS", "HUGO",
-            "WILL", "IlJa","ShuSh" };
     Integer indexStaffArr=0;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -123,18 +121,7 @@ public class controller implements Initializable {
         SStartT.setCellFactory(TextFieldTableCell.forTableColumn());
         SEndT.setCellFactory(TextFieldTableCell.forTableColumn());
     }
-    public void signIn(ActionEvent actionEvent)
-    {
-        //time function perhaps(while ppl scan their fingerprint)
-        if(indexStaffArr==6) indexStaffArr=0;
-        staffLoggedList.getItems().add(staffLogInEMULATED[indexStaffArr]);
-        indexStaffArr++;
-    }
-    public void signOut(ActionEvent actionEvent) {
-        indexStaffArr=staffLoggedList.getSelectionModel().getSelectedIndex();
-        staffLoggedList.getItems().remove(staffLoggedList.getSelectionModel().getSelectedItem());
 
-    }
 
     public String getTerminalName()
     {
@@ -252,5 +239,53 @@ public class controller implements Initializable {
         ObservableList data = FXCollections.observableList(list);
 
         return data;
+    }
+
+
+    public void signOut(javafx.event.ActionEvent actionEvent) {
+        if(staffLoggedList.getSelectionModel().getSelectedItem()!=null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("main/views/SignOut.fxml"));
+            Stage swapStage = new Stage();
+            swapStage.initModality(Modality.WINDOW_MODAL);
+            swapStage.initOwner(signOutB.getScene().getWindow());
+
+            Parent root;
+            try {
+                root = loader.load();
+                signOutC sC = loader.getController();
+                sC.setListView(staffLoggedList);
+                sC.setLabel("Please enter the Pin for : "+staffLoggedList.getSelectionModel().getSelectedItem());
+
+                swapStage.setTitle("Staff Sign OUT");
+                swapStage.setScene(new Scene(root));
+                swapStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void signIn(ActionEvent actionEvent) {
+        FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("main/views/LogIn.fxml"));
+        Stage swapStage=new Stage();
+        swapStage.initModality(Modality.WINDOW_MODAL);
+        swapStage.initOwner(signInB.getScene().getWindow());
+
+        Parent root;
+        try {
+            root = loader.load();
+            logInC lC=loader.getController();
+            lC.setList(staffLoggedList);
+
+            swapStage.setTitle("Staff Sign IN");
+            swapStage.setScene(new Scene(root));
+            swapStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -15,8 +15,12 @@ public class otherMessC {
     
     public void send()
     {
-    	RideTerminalBackend backendInstance = RideTerminalBackend.getInstance();
-        backendInstance.sendAlert(errorMess.getText());
+        if(errorMess.getText()!=null && !errorMess.getText().equals("")) {
+            System.out.println(errorMess.getText() + terminalName);
+            RideTerminalBackend backendInstance = RideTerminalBackend.getInstance();
+            backendInstance.sendAlert(errorMess.getText());
+        }
+
     }
 
     
