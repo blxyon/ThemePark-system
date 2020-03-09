@@ -103,9 +103,8 @@ public class ManagerTerminalBackend implements Runnable{
 	}
 	
 	public void sendAlert(String message) {
-		String alert = "alert," + message;
 		for (ClientTerminal terminal : terminals) {
-			terminal.sendAlert(alert);
+			terminal.sendAlert(message);
 		}
 	}
 	

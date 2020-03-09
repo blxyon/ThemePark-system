@@ -10,8 +10,6 @@ public class notificationC {
     @FXML private TextField errorMess;
 
     public void send() {
-        System.out.println(errorMess.getText());
-        
       
         ManagerTerminalBackend backendInstance = ManagerTerminalBackend.getInstance();
         backendInstance.sendAlert(errorMess.getText());

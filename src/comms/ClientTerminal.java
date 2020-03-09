@@ -77,6 +77,7 @@ public class ClientTerminal {
 	public void sendAlert(String alert) {
 		try {
 			socket.writeMessage("alert," + alert);
+			System.out.println("Alert sent to terminal " + name);
 		} catch (IOException e) {
 			System.out.println("Connection lost with terminal \"" + name + "\"");
 			stop();
