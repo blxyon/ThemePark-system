@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -13,30 +14,13 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class notificationC {
-    @FXML
-    Button otherMessB;
-    public void otherPop(javafx.event.ActionEvent actionEvent)
-    {
-        FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("mainMenu/view/otherMess.fxml"));
-        Stage swapStage=new Stage();
-        swapStage.initModality(Modality.WINDOW_MODAL);
-        swapStage.initOwner(otherMessB.getScene().getWindow());
+    @FXML private Button send;
+    @FXML private TextField errorMess;
 
-        Parent root;
-        try {
-            root = loader.load();
-            otherMessC mC=loader.getController();
-            //mC.setTerminalName(getTerminalName());
+    public void send() {
+        System.out.println(errorMess.getText());
+        //RideTerminalBackend backendInstance = RideTerminalBackend.getInstance();
+        //backendInstance.sendAlert(errorMess.getText());
 
-            swapStage.setTitle("OTHER MESSAGES");
-            swapStage.setScene(new Scene(root));
-            swapStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }catch (NullPointerException e) {
-            e.printStackTrace();
         }
-
     }
-
-}
