@@ -43,10 +43,10 @@
                <children>
                   <Button fx:id="addB" mnemonicParsing="false" onAction="#addToTable" text="Add" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                   <TextField fx:id="timeF" promptText="Time" GridPane.columnIndex="1" />
-                  <TextField fx:id="vF" promptText="Viking's River Splash" GridPane.columnIndex="2" />
-                  <TextField fx:id="nF" promptText="Ninjago: The Ride" GridPane.columnIndex="3" />
-                  <TextField fx:id="sF" promptText="Sky Rider" GridPane.columnIndex="4" />
-                  <TextField fx:id="dF" promptText="Destiny's Bounty" GridPane.columnIndex="5" />
+                  <TextField fx:id="vF" promptText="Swap 1" GridPane.columnIndex="2" />
+                  <TextField fx:id="nF" promptText="Swap 2" GridPane.columnIndex="3" />
+                  <TextField fx:id="sF" promptText="Swap 3" GridPane.columnIndex="4" />
+                  <TextField fx:id="dF" promptText="Swap 4" GridPane.columnIndex="5" />
                </children>
             </GridPane>
             <Button fx:id="removeB" mnemonicParsing="false" onAction="#removeFromTable" text="Remove" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
