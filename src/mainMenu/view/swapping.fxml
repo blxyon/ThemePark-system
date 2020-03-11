@@ -13,10 +13,10 @@
     <TableView fx:id="SwapTable" prefHeight="471.0" prefWidth="1075.0">
       <columns>
         <TableColumn fx:id="time" prefWidth="75.0" text="Time" />
-        <TableColumn fx:id="T1" maxWidth="5000.0" minWidth="10.0" prefWidth="250.0" text="Viking's River Splash" />
-        <TableColumn fx:id="T2" prefWidth="250.0" text="Ninjago: The Ride" />
-        <TableColumn fx:id="T3" prefWidth="250.0" text="Sky Rider" />
-        <TableColumn fx:id="T4" prefWidth="250.0" text="Destiny's Bounty" />
+        <TableColumn fx:id="T1" maxWidth="5000.0" minWidth="10.0" prefWidth="250.0" text="Swaps 1" />
+        <TableColumn fx:id="T2" prefWidth="250.0" text="Swaps 2" />
+        <TableColumn fx:id="T3" prefWidth="250.0" text="Swaps 3" />
+        <TableColumn fx:id="T4" prefWidth="250.0" text="Swaps 4" />
       </columns>
     </TableView>
       <GridPane prefHeight="231.0" prefWidth="1075.0" GridPane.rowIndex="1">
