@@ -10,8 +10,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane id="schedulingTab" minHeight="0.0" minWidth="0.0" prefHeight="564.0" prefWidth="1165.0"
-            xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainMenu.scheduleTab.SchedulingTabC">
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml" fx:controller="mainMenu.scheduleTab.SchedulingTabC">
    <children>
       <GridPane prefHeight="564.0" prefWidth="1165.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
