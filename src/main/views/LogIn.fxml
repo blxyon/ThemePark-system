@@ -7,7 +7,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" blendMode="SRC_OVER" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="760.0" style="-fx-background-color: #EC4521;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="logInC">
+<AnchorPane id="AnchorPane" blendMode="SRC_OVER" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="760.0" style="-fx-background-color: #EC4521;" xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx" fx:controller="logInC">
   <children>
     <GridPane prefHeight="366.0" prefWidth="578.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="215.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="219.0">
       <children>
