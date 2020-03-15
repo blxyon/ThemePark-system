@@ -60,7 +60,7 @@ public class SchedulingTabC implements Initializable {
         position.setCellValueFactory(new PropertyValueFactory<Schedule, Integer>("position"));
         ride.setCellValueFactory(new PropertyValueFactory<Schedule, Integer>("ride"));
         st1.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st1"));
-        st1.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st2"));
+        st2.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st2"));
         st3.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st3"));
         st4.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st4"));
         st5.setCellValueFactory(new PropertyValueFactory<Schedule, String>("st5"));

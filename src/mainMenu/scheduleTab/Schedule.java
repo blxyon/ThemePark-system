@@ -5,8 +5,8 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Schedule {
     //shit class cos lack of experience
-    private SimpleIntegerProperty position;
-    private SimpleIntegerProperty ride;
+    private SimpleStringProperty position;
+    private SimpleStringProperty ride;
     private SimpleStringProperty st1;//9:00
     private SimpleStringProperty st2;//10:00...
     private SimpleStringProperty st3;
@@ -16,11 +16,11 @@ public class Schedule {
     private SimpleStringProperty st7;
     private SimpleStringProperty st8;
 
-        public Schedule(Integer position, Integer ride, String st1, String st2,
+        public Schedule(String position, String ride, String st1, String st2,
                         String st3, String st4, String st5, String st6,
                         String st7, String st8) {
-        this.position = new SimpleIntegerProperty(position);
-        this.ride = new SimpleIntegerProperty(ride);
+        this.position = new SimpleStringProperty(position);
+        this.ride = new SimpleStringProperty(ride);
         this.st1=new SimpleStringProperty(st1);
         this.st2=new SimpleStringProperty(st2);
         this.st3=new SimpleStringProperty(st3);
@@ -33,28 +33,21 @@ public class Schedule {
 
     }
 
-    public int getPosition() {
+    public String getPosition() {
         return position.get();
     }
 
-    public SimpleIntegerProperty positionProperty() {
+    public SimpleStringProperty positionProperty() {
         return position;
     }
 
-    public void setPosition(int position) {
-        this.position.set(position);
-    }
 
-    public int getRide() {
+    public String getRide() {
         return ride.get();
     }
 
-    public SimpleIntegerProperty rideProperty() {
+    public SimpleStringProperty rideProperty() {
         return ride;
-    }
-
-    public void setRide(int ride) {
-        this.ride.set(ride);
     }
 
     public String getSt1() {
