@@ -145,9 +145,9 @@ public class RideTerminalBackend implements Runnable{
 	
 	private void processMessage(String message) {
 		String[] elements = message.split(",");
-		if (elements[0] == "swap") {
+		if (elements[0].compareTo("swap") == 0) {
 			addSwap(message);
-		} else if (elements[1] == "alert") {
+		} else if (elements[1].compareTo("alert") == 0) {
 			alert(elements[1]);
 		}
 	}
