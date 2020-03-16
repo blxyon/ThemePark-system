@@ -180,9 +180,15 @@ public class controller implements Initializable {
     public ObservableList getInitialTableDataO() {
 
         List list = new ArrayList();
-        Staff p=new Staff("asf","hannan","9","10","Viking's River Splash");
-        Staff p2=new Staff("asf","Will","9","10","Ninjago");
-        Staff[] arr={p,p2};
+        Staff p5=new Staff("Operator","Will","9:00","12:00","Viking's River Splash");
+        Staff p6=new Staff("Operator","Jenella","12:00","15:00","Viking's River Splash");
+        Staff p7=new Staff("Operator","Aprille","15:00","17:00","Viking's River Splash");
+        
+        
+        Staff p2=new Staff("Operator","Brandon","9:00","12:00","Ninjago");
+        Staff p3=new Staff("Operator","Ali","12:00","16:00","Ninjago");
+        Staff p4=new Staff("Operator","Chris","16:00","17:00","Ninjago");
+        Staff[] arr={p5,p6,p7,p2,p3,p4};
         for(int i=0;i<arr.length;i++) {
             if ((arr[i].getRide()).equals(getTerminalName())) {
                 list.add(arr[i]);
@@ -196,9 +202,21 @@ public class controller implements Initializable {
     public ObservableList getInitialTableDataAP() {
 
         List list = new ArrayList();
-        Staff p=new Staff("asf","hannan2222","9","10","Viking's River Splash");
-        Staff p2=new Staff("asf","Will2222222","9","10","Ninjago");
-        Staff[] arr={p,p2};
+        Staff p=new Staff("Baywatch","Maxwell","9:00","12:00","Viking's River Splash");
+        Staff p1=new Staff("Baywatch","Andy","12:00","16:00","Viking's River Splash");
+        Staff p2=new Staff("Baywatch","Sam","16:00","17:00","Viking's River Splash");
+        
+        Staff p3=new Staff("Preload","Erin","9:00","13:00","Viking's River Splash");
+        Staff p4=new Staff("Preload","Maxwell","13:00","17:00","Viking's River Splash");
+        
+        Staff p5=new Staff("Load 1","Mani","9:00","14:00","Viking's River Splash");
+        Staff p6=new Staff("Load 1","Erin","14:00","17:00","Viking's River Splash");
+        
+        Staff p7=new Staff("Offload","Sam","9:00","15:00","Viking's River Splash");
+        Staff p8=new Staff("Offload","Mani","15:00","17:00","Viking's River Splash");
+        
+
+        Staff[] arr={p,p1,p2,p3,p4,p5,p6,p7,p8};
         for(int i=0;i<arr.length;i++) {
             if ((arr[i].getRide()).equals(getTerminalName())) {
                 list.add(arr[i]);
@@ -211,8 +229,8 @@ public class controller implements Initializable {
     public ObservableList getInitialTableDataAS() {
 
         List list = new ArrayList();
-        Staff p=new Staff("asf","hannan3333333","9","10","Viking's River Splash");
-        Staff p2=new Staff("asf","Will3333333333","9","10","Ninjago");
+        Staff p=new Staff("Height Check","Talia","9:00","13:00","Viking's River Splash");
+        Staff p2=new Staff("Height Check","Will","13:00","17:00","Viking's River Splash");
         Staff[] arr={p,p2};
         for(int i=0;i<arr.length;i++) {
             if ((arr[i].getRide()).equals(getTerminalName())) {
@@ -227,8 +245,8 @@ public class controller implements Initializable {
     public ObservableList getInitialTableDataS() {
 
         List list = new ArrayList();
-        Staff p=new Staff("asf","hannan33333344444","9","10","Viking's River Splash");
-        Staff p2=new Staff("asf","Will4444444","9","10","Ninjago");
+        Staff p=new Staff("Q-Bot","Aprille","9:00","14:00","Viking's River Splash");
+        Staff p2=new Staff("Q-Bot","Talia","14:00","17:00","Viking's River Splash");
         Staff[] arr={p,p2};
 
         for(int i=0;i<arr.length;i++) {
