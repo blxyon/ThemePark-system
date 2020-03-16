@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="1165.0" style="-fx-background-color: #eeffd0#eeffd0;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="1165.0" style="-fx-background-color: #eeffd0#eeffd0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller">
   <children>
     <TabPane prefHeight="784.0" prefWidth="1098.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <tabs>
@@ -84,12 +84,12 @@
                                                       <Font size="26.0" fx:id="x11" />
                                                    </font>
                                                 </Text>
-                                                <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                                <TableView fx:id="OperatorTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                                    <columns>
-                                                      <TableColumn prefWidth="140.0" resizable="true" text="Category" />
-                                                      <TableColumn maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="Start" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="End" />
+                                                      <TableColumn fx:id="OCategory" prefWidth="140.0" resizable="true" text="Category" />
+                                                      <TableColumn fx:id="OName" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                                      <TableColumn fx:id="OStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
+                                                      <TableColumn fx:id="OEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                                    </columns>
                                                 </TableView>
                                                 <Text font="$x11" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendant - Primary" GridPane.rowIndex="3" />
@@ -111,28 +111,28 @@
                                                       <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="NEVER" />
                                                    </rowConstraints>
                                                 </GridPane>
-                                                <TableView prefHeight="175.0" prefWidth="750.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                                <TableView fx:id="AttendantPTable" prefHeight="175.0" prefWidth="750.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
                                                    <columns>
-                                                      <TableColumn prefWidth="140.0" resizable="true" text="Category" />
-                                                      <TableColumn maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="Start" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="End" />
+                                                      <TableColumn fx:id="APCategory" prefWidth="140.0" resizable="true" text="Category" />
+                                                      <TableColumn fx:id="APName" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                                      <TableColumn fx:id="APStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
+                                                      <TableColumn fx:id="APEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                                    </columns>
                                                 </TableView>
-                                                <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                                                <TableView fx:id="AttendantSTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="6">
                                                    <columns>
-                                                      <TableColumn prefWidth="140.0" resizable="true" text="Category" />
-                                                      <TableColumn maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="Start" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="End" />
+                                                      <TableColumn fx:id="ASCategory" prefWidth="140.0" resizable="true" text="Category" />
+                                                      <TableColumn fx:id="ASName" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                                      <TableColumn fx:id="ASStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
+                                                      <TableColumn fx:id="ASEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                                    </columns>
                                                 </TableView>
-                                                <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                                                <TableView fx:id="ServiceTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="8">
                                                    <columns>
-                                                      <TableColumn prefWidth="140.0" resizable="true" text="Category" />
-                                                      <TableColumn maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="Start" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="End" />
+                                                      <TableColumn fx:id="SCategory" prefWidth="140.0" resizable="true" text="Category" />
+                                                      <TableColumn fx:id="SName" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                                      <TableColumn fx:id="SStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
+                                                      <TableColumn fx:id="SEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                                    </columns>
                                                 </TableView>
                                              </children>
