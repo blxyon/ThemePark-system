@@ -46,10 +46,10 @@ public class RideTerminalBackend implements Runnable{
 		while (running) {
 			String newMessage = managerTerminal.readMessage();
 			if (newMessage == null) {
-				stop();
-				return;
+			//	stop();
+				continue;
 			}
-			
+			System.out.println(newMessage);
 			processMessage(newMessage);
 		}
 	}
@@ -85,7 +85,7 @@ public class RideTerminalBackend implements Runnable{
 		JPanel p = new JPanel();
 		JButton button = new JButton();
 		JLabel label=new JLabel();
-		label.setText("message");
+		label.setText(message);
 
 		button.setText("OK");
 		p.add(label);
@@ -145,9 +145,9 @@ public class RideTerminalBackend implements Runnable{
 	
 	private void processMessage(String message) {
 		String[] elements = message.split(",");
-		if (elements[0] == "swap") {
+		if (elements[0].compareTo("swap") == 0) {
 			addSwap(message);
-		} else if (elements[1] == "alert") {
+		} else if (elements[0].compareTo("alert") == 0) {
 			alert(elements[1]);
 		}
 	}
@@ -158,6 +158,6 @@ public class RideTerminalBackend implements Runnable{
 	}
 	
 	private void alert(String message) {
-		System.out.println("Alert from the manager: " + message);
+		popup("Alert from the manager: " + message);
 	}
 }
