@@ -99,7 +99,7 @@
                                                 <TableView fx:id="OperatorTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                                    <columns>
                                                       <TableColumn fx:id="OCategory" prefWidth="140.0" resizable="true" text="Category" />
-                                                      <TableColumn fx:id="ONameT" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                                      <TableColumn fx:id="OName" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
                                                       <TableColumn fx:id="OStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
                                                       <TableColumn fx:id="OEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                                    </columns>
