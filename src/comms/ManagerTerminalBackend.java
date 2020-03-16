@@ -102,6 +102,12 @@ public class ManagerTerminalBackend implements Runnable{
 		return false;
 	}
 	
+	public void sendAlert(String message) {
+		for (ClientTerminal terminal : terminals) {
+			terminal.sendAlert(message);
+		}
+	}
+	
 	public void stop() {
 		if (!running) {
 			return;
