@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="1165.0" style="-fx-background-color: #eeffd0#eeffd0;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="1165.0" style="-fx-background-color: #eeffd0#eeffd0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller">
   <children>
     <TabPane prefHeight="784.0" prefWidth="1098.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <tabs>
@@ -96,12 +96,12 @@
                                                       <Font size="26.0" fx:id="x1223" />
                                                    </font>
                                                 </Text>
-                                                <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                                <TableView fx:id="OperatorTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                                    <columns>
-                                                      <TableColumn prefWidth="140.0" resizable="true" text="Category" />
-                                                      <TableColumn maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="Start" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="End" />
+                                                      <TableColumn fx:id="OCategory" prefWidth="140.0" resizable="true" text="Category" />
+                                                      <TableColumn fx:id="ONameT" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                                      <TableColumn fx:id="OStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
+                                                      <TableColumn fx:id="OEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                                    </columns>
                                                    <GridPane.margin>
                                                       <Insets />

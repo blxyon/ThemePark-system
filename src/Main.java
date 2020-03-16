@@ -18,8 +18,8 @@ public class Main extends Application {
         RideTerminalBackend backendInstance = RideTerminalBackend.getInstance();
 
         
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/ninjago.fxml"));
-        //FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/destiny.fxml"));
+        //FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/ninjago.fxml"));
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/destiny.fxml"));
         //FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/skyrider.fxml"));
         //FXMLLoader loader=new FXMLLoader(getClass().getResource("main/views/vikings.fxml"));
 

@@ -72,29 +72,45 @@ public class controller implements Initializable {
         OStartT.setCellValueFactory(new PropertyValueFactory<Staff, String>("StartT"));
         OEndT.setCellValueFactory(new PropertyValueFactory<Staff, String>("EndT"));
 
-        APCategory.setCellValueFactory(new PropertyValueFactory<Staff, String>("Category"));
-        APName.setCellValueFactory(new PropertyValueFactory<Staff, String>("Name"));
-        APStartT.setCellValueFactory(new PropertyValueFactory<Staff, String>("StartT"));
-        APEndT.setCellValueFactory(new PropertyValueFactory<Staff, String>("EndT"));
+        if(!(getTerminalName().equals("Sky Rider") || getTerminalName().equals("Destiny's Bounty")) ){
+            APCategory.setCellValueFactory(new PropertyValueFactory<Staff, String>("Category"));
+            APName.setCellValueFactory(new PropertyValueFactory<Staff, String>("Name"));
+            APStartT.setCellValueFactory(new PropertyValueFactory<Staff, String>("StartT"));
+            APEndT.setCellValueFactory(new PropertyValueFactory<Staff, String>("EndT"));
 
-        ASCategory.setCellValueFactory(new PropertyValueFactory<Staff, String>("Category"));
-        ASName.setCellValueFactory(new PropertyValueFactory<Staff, String>("Name"));
-        ASStartT.setCellValueFactory(new PropertyValueFactory<Staff, String>("StartT"));
-        ASEndT.setCellValueFactory(new PropertyValueFactory<Staff, String>("EndT"));
+            ASCategory.setCellValueFactory(new PropertyValueFactory<Staff, String>("Category"));
+            ASName.setCellValueFactory(new PropertyValueFactory<Staff, String>("Name"));
+            ASStartT.setCellValueFactory(new PropertyValueFactory<Staff, String>("StartT"));
+            ASEndT.setCellValueFactory(new PropertyValueFactory<Staff, String>("EndT"));
 
+            ObservableList dataAP=getInitialTableDataAP();
+            ObservableList dataAS=getInitialTableDataAS();
+            AttendantPTable.setItems(dataAP);
+            AttendantSTable.setItems(dataAS);
+
+            AttendantPTable.setEditable(true);
+            APCategory.setCellFactory(TextFieldTableCell.forTableColumn());
+            APName.setCellFactory(TextFieldTableCell.forTableColumn());
+            APStartT.setCellFactory(TextFieldTableCell.forTableColumn());
+            APEndT.setCellFactory(TextFieldTableCell.forTableColumn());
+
+            AttendantSTable.setEditable(true);
+            ASCategory.setCellFactory(TextFieldTableCell.forTableColumn());
+            ASName.setCellFactory(TextFieldTableCell.forTableColumn());
+            ASStartT.setCellFactory(TextFieldTableCell.forTableColumn());
+            ASEndT.setCellFactory(TextFieldTableCell.forTableColumn());
+        }
         SCategory.setCellValueFactory(new PropertyValueFactory<Staff, String>("Category"));
         SName.setCellValueFactory(new PropertyValueFactory<Staff, String>("Name"));
         SStartT.setCellValueFactory(new PropertyValueFactory<Staff, String>("StartT"));
         SEndT.setCellValueFactory(new PropertyValueFactory<Staff, String>("EndT"));
 
         ObservableList dataO=getInitialTableDataO();
-        ObservableList dataAP=getInitialTableDataAP();
-        ObservableList dataAS=getInitialTableDataAS();
+
         ObservableList dataS=getInitialTableDataS();
 
         OperatorTable.setItems(dataO);
-        AttendantPTable.setItems(dataAP);
-        AttendantSTable.setItems(dataAS);
+
         ServiceTable.setItems(dataS);
 
         OperatorTable.setEditable(true);
@@ -103,17 +119,7 @@ public class controller implements Initializable {
         OStartT.setCellFactory(TextFieldTableCell.forTableColumn());
         OEndT.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        AttendantPTable.setEditable(true);
-        APCategory.setCellFactory(TextFieldTableCell.forTableColumn());
-        APName.setCellFactory(TextFieldTableCell.forTableColumn());
-        APStartT.setCellFactory(TextFieldTableCell.forTableColumn());
-        APEndT.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        AttendantSTable.setEditable(true);
-        ASCategory.setCellFactory(TextFieldTableCell.forTableColumn());
-        ASName.setCellFactory(TextFieldTableCell.forTableColumn());
-        ASStartT.setCellFactory(TextFieldTableCell.forTableColumn());
-        ASEndT.setCellFactory(TextFieldTableCell.forTableColumn());
 
         ServiceTable.setEditable(true);
         SCategory.setCellFactory(TextFieldTableCell.forTableColumn());
