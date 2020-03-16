@@ -128,12 +128,12 @@
                                                       </Text>
                                                    </children>
                                                 </GridPane>
-                                                <TableView layoutX="10.0" layoutY="150.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                                                <TableView fx:id="ServiceTable" layoutX="10.0" layoutY="150.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                                                    <columns>
-                                                      <TableColumn prefWidth="140.0" resizable="true" text="Category" />
-                                                      <TableColumn maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="Start" />
-                                                      <TableColumn maxWidth="150.0" prefWidth="150.0" text="End" />
+                                                      <TableColumn fx:id="SCategory" prefWidth="140.0" resizable="true" text="Category" />
+                                                      <TableColumn fx:id="SName" maxWidth="390.0" minWidth="50.0" prefWidth="300.0" resizable="true" text="Name" />
+                                                      <TableColumn fx:id="SStartT" maxWidth="150.0" prefWidth="150.0" text="Start" />
+                                                      <TableColumn fx:id="SEndT" maxWidth="150.0" prefWidth="150.0" text="End" />
                                                    </columns>
                                                 </TableView>
                                              </children>
