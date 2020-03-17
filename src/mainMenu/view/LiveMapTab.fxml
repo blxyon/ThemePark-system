@@ -16,7 +16,7 @@
             <TableColumn fx:id="dCo" minWidth="150.0" prefWidth="261.25" style="-fx-base: #d0d7ff #d0d7ff;" text="Destiny's Bounty" />
          </columns>
       </TableView>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HH:MM" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="25.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14:17" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="25.0">
          <font>
             <Font name="Raleway Medium" size="40.0" fx:id="x23" />
          </font>
