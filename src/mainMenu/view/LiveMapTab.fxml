@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="564.0" prefWidth="1165.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="mainMenu.liveMapTab.liveMapC">
+   <children>
+      <TableView fx:id="liveTermTable" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffd0ee#ffd0ee;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="100.0">
+         <columns>
+            <TableColumn fx:id="vCo" minWidth="150.0" prefWidth="261.25" style="-fx-base: #d0d7ff;" text="Vikings" />
+            <TableColumn fx:id="nCo" minWidth="150.0" prefWidth="261.25" style="-fx-base: #d0d7ff #d0d7ff;" text="Ninjago" />
+            <TableColumn fx:id="sCo" minWidth="150.0" prefWidth="261.25" style="-fx-base: #d0d7ff #d0d7ff;" text="Sky Rider" />
+            <TableColumn fx:id="dCo" minWidth="150.0" prefWidth="261.25" style="-fx-base: #d0d7ff #d0d7ff;" text="Destiny's Bounty" />
+         </columns>
+      </TableView>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14:17" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="25.0">
+         <font>
+            <Font name="Raleway Medium" size="40.0" fx:id="x23" />
+         </font>
+      </Text>
+      <Text stroke="#1200ff" strokeType="OUTSIDE" strokeWidth="0.5" text="Live Terminal Map" underline="true" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="25.0">
+         <font>
+            <Font name="Raleway SemiBold" size="40.0" fx:id="x33" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

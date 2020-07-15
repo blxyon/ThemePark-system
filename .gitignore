@@ -1,0 +1,5 @@
+# Project exclude paths
+/out/
+/bin/
+/.idea/
+/scheduling_system.iml
